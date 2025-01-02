@@ -238,12 +238,12 @@ class OsquerydTest(unittest.TestCase):
 
         os.mkdir(self.tmp_dir)
 
-        self.pidfile = os.path.join(self.tmp_dir, 'osquery.pidfile')
+        self.pidfile = os.path.join(self.tmp_dir, 'agenttool.pidfile')
         self.log_path = os.path.join(self.tmp_dir, 'log')
-        self.database_path = os.path.join(self.tmp_dir, 'osquery.{}.db'.format(
+        self.database_path = os.path.join(self.tmp_dir, 'agenttool.{}.db'.format(
             self.test_instance))
-        self.config_path = os.path.join(self.tmp_dir, 'osquery.conf')
-        self.flagfile = os.path.join(self.tmp_dir, 'osquery.flags')
+        self.config_path = os.path.join(self.tmp_dir, 'agenttool.conf')
+        self.flagfile = os.path.join(self.tmp_dir, 'agenttool.flags')
 
         # Write out our mock configuration files
         with open(self.config_path, 'wb') as fd:

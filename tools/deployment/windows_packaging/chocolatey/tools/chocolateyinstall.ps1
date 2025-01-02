@@ -84,13 +84,13 @@ Copy-Item -Force (Join-Path "$packageRoot" "agenttooli.exe") $targetFolder
 # We intentionally do not replace configuration and flags files from previous
 # installations, as these often dictate the osquery configuration and may not
 # change through upgrades.
-$currConf = (Join-Path "$targetFolder" "osquery.conf")
+$currConf = (Join-Path "$targetFolder" "agenttool.conf")
 if (-not (Test-Path $currConf)) {
-  Copy-Item -Force (Join-Path "$packageRoot" "osquery.conf") $targetFolder
+  Copy-Item -Force (Join-Path "$packageRoot" "agenttool.conf") $targetFolder
 }
-$currFlags = (Join-Path "$targetFolder" "osquery.flags")
+$currFlags = (Join-Path "$targetFolder" "agenttool.flags")
 if (-not (Test-Path $currFlags)) {
-  Copy-Item -Force (Join-Path "$packageRoot" "osquery.flags") $targetFolder
+  Copy-Item -Force (Join-Path "$packageRoot" "agenttool.flags") $targetFolder
 }
 
 # The osquery daemon requires no low privileged users have write access to run
@@ -101,7 +101,7 @@ if ($installService) {
     Write-Debug 'Installing osquery daemon service.'
     # If the 'install' parameter is passed, we create a Windows service with
     # the flag file in the default location, 'C:\Program Files\osquery'
-    $cmd = '"{0}" --flagfile="{1}\osquery.flags"' -f $destDaemonBin, $targetFolder
+    $cmd = '"{0}" --flagfile="{1}\agenttool.flags"' -f $destDaemonBin, $targetFolder
 
     $svcArgs = @{
       Name = $serviceName
@@ -112,9 +112,9 @@ if ($installService) {
     }
     New-Service @svcArgs
 
-    # If the osquery.flags file doesn't exist, we create a blank one.
-    if (-not (Test-Path "$targetFolder\osquery.flags")) {
-      Add-Content "$targetFolder\osquery.flags" $null
+    # If the agenttool.flags file doesn't exist, we create a blank one.
+    if (-not (Test-Path "$targetFolder\agenttool.flags")) {
+      Add-Content "$targetFolder\agenttool.flags" $null
     }
   }
   Start-Service $serviceName

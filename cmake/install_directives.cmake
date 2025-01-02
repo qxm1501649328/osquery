@@ -88,7 +88,7 @@ function(generateInstallDirectives)
     )
 
     install(
-      FILES "tools/deployment/osquery.example.conf"
+      FILES "tools/deployment/agenttool.example.conf"
       DESTINATION "share/agenttool"
     )
 
@@ -192,7 +192,7 @@ function(generateInstallDirectives)
     )
 
     install(
-      FILES "tools/deployment/osquery.example.conf"
+      FILES "tools/deployment/agenttool.example.conf"
       DESTINATION "."
       RENAME "osquery.conf"
     )
@@ -316,7 +316,7 @@ function(generateInstallDirectives)
 
     install(
       FILES
-        "tools/deployment/osquery.example.conf"
+        "tools/deployment/agenttool.example.conf"
 
       DESTINATION
         "/private/var/agenttool"

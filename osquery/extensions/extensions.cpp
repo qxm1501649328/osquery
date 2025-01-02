@@ -63,7 +63,7 @@ CLI_FLAG(bool, disable_extensions, false, "Disable extension API");
 
 CLI_FLAG(string,
          extensions_socket,
-         OSQUERY_SOCKET "osquery.em",
+         OSQUERY_SOCKET "agenttool.em",
          "Path to the extensions UNIX domain socket");
 
 CLI_FLAG(string,

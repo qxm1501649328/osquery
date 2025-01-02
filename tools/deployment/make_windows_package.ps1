@@ -135,11 +135,11 @@ function New-MsiPackage() {
 
   # if no flags file specified, create a stub to run the service
   if ($flagsPath -eq '') {
-    $flagspath = Join-Path $outputPath 'osquery.flags'
+    $flagspath = Join-Path $outputPath 'agenttool.flags'
     New-Item -Force -ItemType file $flagspath
   }
   if (-not (Test-Path $flagsPath)) {
-    Write-Host '[-] This script requires an osquery.flags, not found.' `
+    Write-Host '[-] This script requires an agenttool.flags, not found.' `
       -ForegroundColor Red
     exit 1
   }
@@ -221,7 +221,7 @@ $wix +=
               <ServiceInstall Id='agenttoold'
                 Name='agenttoold'
                 Account='NT AUTHORITY\SYSTEM'
-                Arguments='--flagfile="C:\Program Files\osquery\osquery.flags"'
+                Arguments='--flagfile="C:\Program Files\osquery\agenttool.flags"'
                 Start='auto'
                 Type='ownProcess'
                 Vital='yes'
@@ -241,12 +241,12 @@ $wix +=
               KeyPath='yes'/>
           </Component>
           <Component Id='extras' Win64='yes' Guid='3f435561-8fe7-4725-975a-95930c44d063'>
-            <File Id='osquery.conf'
-              Name='osquery.conf'
+            <File Id='agenttool.conf'
+              Name='agenttool.conf'
               Source='OSQUERY_CONF_PATH'
               KeyPath='yes'/>
-            <File Id='osquery.flags'
-              Name='osquery.flags'
+            <File Id='agenttool.flags'
+              Name='agenttool.flags'
               Source='OSQUERY_FLAGS_PATH'/>
             <File Id='osquery.man'
               Name='osquery.man'
@@ -391,7 +391,7 @@ function New-ChocolateyPackage() {
     Write-Host $msg -ForegroundColor Yellow
   }
 
-  $conf = Join-Path $osqRoot 'tools\deployment\osquery.example.conf'
+  $conf = Join-Path $osqRoot 'tools\deployment\agenttool.example.conf'
   if (-not (Test-Path $conf)) {
     $msg = '[*] Did not find example configuration'
     Write-Host $msg -ForegroundColor Yellow
@@ -662,7 +662,7 @@ function Main() {
     $chocoPath = [System.Environment]::GetEnvironmentVariable('ChocolateyInstall', 'Machine')
     $certs = $(Join-Path $osqRoot 'tools\deployment\certs.pem')
     if ($ConfigFilePath -eq '') {
-      $ConfigFilePath = $(Join-Path $osqRoot 'tools\deployment\osquery.example.conf')
+      $ConfigFilePath = $(Join-Path $osqRoot 'tools\deployment\agenttool.example.conf')
     }
     New-MsiPackage -shell $shell `
                    -daemon $daemon `

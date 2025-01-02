@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright (c) 2014-present, The osquery authors
+# Copyright (c) 2014-present, The agenttool authors
 #
 # This source code is licensed as defined by the LICENSE file found in the
 # root directory of this source tree.
@@ -106,12 +106,12 @@ main() {
   platform OS
 
   if [[ $OS = "darwin" ]]; then
-    REAL_CONFIG_PATH="/var/agenttool/osquery.conf"
-    FLAGS_FILE_PATH="/var/agenttool/osquery.flags"
-    EXAMPLE_CONFIG_PATH="/var/agenttool/osquery.example.conf"
-    PIDFILE="/var/agenttool/osquery.pid"
-    LOCKFILE="/var/agenttool/osquery.lock"
-    EXEC="/opt/agenttool/lib/osquery.app/Contents/MacOS/agenttoold"
+    REAL_CONFIG_PATH="/var/agenttool/agenttool.conf"
+    FLAGS_FILE_PATH="/var/agenttool/agenttool.flags"
+    EXAMPLE_CONFIG_PATH="/var/agenttool/agenttool.example.conf"
+    PIDFILE="/var/agenttool/agenttool.pid"
+    LOCKFILE="/var/agenttool/agenttool.lock"
+    EXEC="/opt/agenttool/lib/agenttool.app/Contents/MacOS/agenttoold"
     PLIST_DOMAIN="io.osquery.agent"
     PLIST_PATH="/Library/LaunchDaemons/$PLIST_DOMAIN.plist"
     PLIST_INSTALLATION_PATH="/var/agenttool/$PLIST_DOMAIN.plist"
@@ -126,14 +126,14 @@ main() {
       exit 6
     fi
 
-    REAL_CONFIG_PATH="/etc/agenttool/osquery.conf"
-    EXAMPLE_CONFIG_PATH="/opt/agenttool/share/agenttool/osquery.example.conf"
-    PIDFILE="/var/run/osquery.pid"
+    REAL_CONFIG_PATH="/etc/agenttool/agenttool.conf"
+    EXAMPLE_CONFIG_PATH="/opt/agenttool/share/agenttool/agenttool.example.conf"
+    PIDFILE="/var/run/agenttool.pid"
     LOCKFILE="/var/lock/subsys/agenttoold"
     EXEC="/opt/agenttool/bin/agenttoold"
   fi
 
-  OSQUERY_DB="/var/agenttool/osquery.db"
+  OSQUERY_DB="/var/agenttool/agenttool.db"
   PROG="agenttoold"
 
   case "$1" in

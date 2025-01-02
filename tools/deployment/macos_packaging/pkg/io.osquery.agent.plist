@@ -7,11 +7,11 @@
   <key>Disabled</key>
   <false/>
   <key>Label</key>
-  <string>io.osquery.agent</string>
+  <string>io.agenttool.agent</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/opt/agenttool/lib/osquery.app/Contents/MacOS/agenttoold</string>
-    <string>--flagfile=/private/var/agenttool/osquery.flags</string>
+    <string>/opt/agenttool/lib/agenttool.app/Contents/MacOS/agenttoold</string>
+    <string>--flagfile=/private/var/agenttool/agenttool.flags</string>
   </array>
   <key>RunAtLoad</key>
   <true/>

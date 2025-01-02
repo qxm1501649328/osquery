@@ -48,11 +48,11 @@ TEST_F(SocketEventsTableTests, test_parse_sock_addr) {
   std::string msg3 = "01002F746D702F6F7371756572792E656D0000";
   SocketEventSubscriber::parseSockAddr(msg3, r4, unix_socket);
   ASSERT_FALSE(r4["socket"].empty());
-  EXPECT_EQ(r4["socket"], "/tmp/osquery.em");
+  EXPECT_EQ(r4["socket"], "/tmp/agenttool.em");
 
   msg3 = "0100002F746D702F6F7371756572792E656D";
   SocketEventSubscriber::parseSockAddr(msg3, r4, unix_socket);
-  EXPECT_EQ(r4["socket"], "/tmp/osquery.em");
+  EXPECT_EQ(r4["socket"], "/tmp/agenttool.em");
 }
 
 TEST_F(SocketEventsTableTests, succeeded_blocking_connect_syscall) {

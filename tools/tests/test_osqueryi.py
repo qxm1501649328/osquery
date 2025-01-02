@@ -117,7 +117,7 @@ class OsqueryiTest(unittest.TestCase):
         proc = test_base.TimeoutRunner([
                 self.binary,
                 "--config_check",
-                "--config_path=%s" % configFile("osquery.example.conf"),
+                "--config_path=%s" % configFile("agenttool.example.conf"),
                 "--verbose",
             ],
             SHELL_TIMEOUT)

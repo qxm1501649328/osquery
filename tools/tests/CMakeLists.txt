@@ -58,7 +58,7 @@ function(preparePythonTestsEnvironment)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/test_base.py" test_base.py COPYONLY)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/utils.py" utils.py COPYONLY)
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/test_http_server.py" test_http_server.py COPYONLY)
-  configure_file("${CMAKE_SOURCE_DIR}/tools/deployment/osquery.example.conf" "${TEST_CONFIGS_DIR}/osquery.example.conf" COPYONLY)
+  configure_file("${CMAKE_SOURCE_DIR}/tools/deployment/agenttool.example.conf" "${TEST_CONFIGS_DIR}/agenttool.example.conf" COPYONLY)
 
   add_custom_target(osquery_tools_tests_pythontests ALL)
 

@@ -1,4 +1,4 @@
-FLAG_FILE="/etc/agenttool/osquery.flags"
-CONFIG_FILE="/etc/agenttool/osquery.conf"
+FLAG_FILE="/etc/agenttool/agenttool.flags"
+CONFIG_FILE="/etc/agenttool/agenttool.conf"
 LOCAL_PIDFILE="/var/agenttool/agenttoold.pidfile"
 PIDFILE="/var/run/agenttoold.pidfile"

@@ -78,3 +78,5 @@ pyrightconfig.json
 !/external/examples
 !/external/cmake/cmakelibs.cmake
 !/external/CMakeLists.txt
+
+osquery-packaging/*
