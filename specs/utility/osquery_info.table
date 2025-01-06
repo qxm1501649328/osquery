@@ -1,4 +1,4 @@
-table_name("osquery_info")
+table_name("agenttool_info")
 description("Top level information about the running version of osquery.")
 schema([
     Column("pid", INTEGER, "Process (or thread/handle) ID"),

@@ -1,4 +1,4 @@
-table_name("osquery_registry")
+table_name("agenttool_registry")
 description("List the osquery registry plugins.")
 schema([
     Column("registry", TEXT, "Name of the osquery registry"),

@@ -1,4 +1,4 @@
-table_name("osquery_flags")
+table_name("agenttool_flags")
 description("Configurable flags that modify osquery's behavior.")
 schema([
     Column("name", TEXT, "Flag name"),

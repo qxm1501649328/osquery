@@ -1,4 +1,4 @@
-table_name("osquery_events")
+table_name("agenttool_events")
 description("Information about the event publishers and subscribers.")
 schema([
     Column("name", TEXT, "Event publisher or subscriber name"),

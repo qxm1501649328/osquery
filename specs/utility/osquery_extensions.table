@@ -1,4 +1,4 @@
-table_name("osquery_extensions")
+table_name("agenttool_extensions")
 description("List of active osquery extensions.")
 schema([
     Column("uuid", BIGINT, "The transient ID assigned for communication"),

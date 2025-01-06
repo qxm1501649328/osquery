@@ -1,4 +1,4 @@
-table_name("osquery_schedule")
+table_name("agenttool_schedule")
 description("Information about the current queries that are scheduled in osquery.")
 schema([
     Column("name", TEXT, "The given name for this query"),
