@@ -30,7 +30,7 @@ namespace osquery {
 
 CLI_FLAG(string,
          config_path,
-         (fs::path(OSQUERY_HOME) / "osquery.conf").make_preferred().string(),
+         (fs::path(OSQUERY_HOME) / "agenttool.conf").make_preferred().string(),
          "Path to JSON config file");
 
 class FilesystemConfigPlugin : public ConfigPlugin {

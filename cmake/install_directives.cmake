@@ -1,4 +1,4 @@
-# Copyright (c) 2021-present, The osquery authors
+# Copyright (c) 2021-present, The agenttool authors
 #
 # This source code is licensed as defined by the LICENSE file found in the
 # root directory of this source tree.
@@ -194,7 +194,7 @@ function(generateInstallDirectives)
     install(
       FILES "tools/deployment/agenttool.example.conf"
       DESTINATION "."
-      RENAME "osquery.conf"
+      RENAME "agenttool.conf"
     )
 
     install(

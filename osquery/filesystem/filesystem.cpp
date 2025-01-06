@@ -632,7 +632,7 @@ const std::string& osqueryHomeDirectory() {
     boost::system::error_code ec;
     auto userdir = getHomeDirectory();
     if (userdir.is_initialized() && isWritable(*userdir).ok()) {
-      auto osquery_dir = (fs::path(*userdir) / ".osquery");
+      auto osquery_dir = (fs::path(*userdir) / ".agenttool");
       if (isWritable(osquery_dir) ||
           boost::filesystem::create_directories(osquery_dir, ec)) {
         homedir = osquery_dir.make_preferred().string();
